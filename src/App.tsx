@@ -1,11 +1,10 @@
+import { css, Global } from "@emotion/react";
+import styled from "@emotion/styled";
+import { mauveDark } from "@radix-ui/colors";
 import gramophones from "./data/gramophones.json";
 import Gramo from "./Gramo";
-import Grid from "./ui/Grid";
-import { Global, css } from "@emotion/react";
-import { mauveDark } from "@radix-ui/colors";
-import styled from "@emotion/styled";
 import Logo from "./Logo";
-import { useState } from "react";
+import Grid from "./ui/Grid";
 
 type Gramo = {
   url: string;

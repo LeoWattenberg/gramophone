@@ -67,10 +67,11 @@ const Nth = styled.span({
 
 const Theme = styled.div({
   color: "white",
-  fontSize: "2em",
+  fontSize: "1.8em",
   fontWeight: "200",
   justifySelf: "center",
-  alignSelf: "center",
+  alignSelf: "end",
+  textShadow: "0 0 18px black, 0 0 24px black",
 });
 
 type Props = PropsWithChildren<{
@@ -91,7 +92,7 @@ const Gramo = ({ id, url, imgId, children }: Props) => {
   return (
     <GramoView>
       <Unsplash id={img()} hue={isFree ? (Number(id) % 16) / 15 : 0}>
-        <A href={url}>
+        <A href={url} css={{ display: "grid" }}>
           <Cover>
             <Title>
               {id}

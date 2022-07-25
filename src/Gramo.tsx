@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { PropsWithChildren } from "react";
+import A from "./ui/A";
 import Unsplash from "./ui/Unsplash";
 
 const nTable: Record<string, string> = {
@@ -44,11 +45,6 @@ const GramoView = styled.div({
     paddingTop: "100%",
     pointerEvents: "none",
   },
-});
-
-const A = styled.a({
-  textDecoration: "none",
-  display: "grid",
 });
 
 const Cover = styled.div({

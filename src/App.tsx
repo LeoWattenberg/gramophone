@@ -4,6 +4,7 @@ import { mauveDark } from "@radix-ui/colors";
 import gramophones from "./data/gramophones.json";
 import Gramo from "./Gramo";
 import Logo from "./Logo";
+import A from "./ui/A";
 import Grid from "./ui/Grid";
 
 type Gramo = {
@@ -52,17 +53,22 @@ function App() {
       />
       <AppView className="App">
         <Grid>
-          <Header css={{ gridColumn: "1 / -1" }}>
+          <Header css={{ gridColumn: "1 / -1", color: mauveDark.mauve11 }}>
             <Logo css={{ maxWidth: "30em" }} />
-            <p css={{ color: mauveDark.mauve11 }}>
-              Playlists from the Gramophone listening party events in the <a href="https://discord.gg/bW7RjkNb5z">Tantacrul Discord server</a>. <br />
-              Each playlist contains songs from a diverse range of genres submitted by a diverse range of people, allowing you to break out of endlessly similar algorithmic recommendations.
+            <p>
+              Playlists from the Gramophone listening party events in the{" "}
+              <A href="https://discord.gg/bW7RjkNb5z">Tantacrul Discord server</A>.
+            </p>
+            <p css={{}}>
+              Each playlist contains songs from a diverse range of genres submitted by a diverse
+              range of people, allowing you to break out of endlessly similar algorithmic
+              recommendations.
             </p>
           </Header>
           {Object.entries(gramophones as GramoList)
             .sort((a, b) => Number(b[0]) - Number(a[0]))
             .map(([key, { url, theme, imgId }]) => (
-              <Gramo id={key} url={url} imgId={imgId}>
+              <Gramo key={key} id={key} url={url} imgId={imgId}>
                 {theme}
               </Gramo>
             ))}
